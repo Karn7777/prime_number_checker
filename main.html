@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime number calculator</title>
+</head>
+<body>
+    <h1>Prime number calculator</h1>
+    <text> Enter number : </text>
+    <input  type = "number" id="n">
+    <button onclick="check()">Check</button>
+    <h3 id="ans"></h3>
+    <script>
+            function isprime(num) {
+                if(num<=1) {
+                    return false;
+                }
+                for(var i = 2; i <= Math.sqrt(num); i++) {
+                    if(num%i===0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            function check(){
+                var num = parseInt(document.getElementById("n").value);
+                var answer = document.getElementById("ans");
+                if(isprime(num)){
+                    answer.textContent = "Prime number";
+                }else{
+                    answer.textContent = "Not a prime number";
+                }
+            }
+    </script>
+</body>
+</html>
